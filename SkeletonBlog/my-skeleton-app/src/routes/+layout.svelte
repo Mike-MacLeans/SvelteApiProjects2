@@ -19,17 +19,18 @@
 	}
 </script>
 
-<!-- App Shell -->
-<Drawer>
-	<Navigation />
-</Drawer>
-<AppShell slotSidebarLeft="bg-surface-500/5 w-0 lg:w-64">
-	<svelte:fragment slot="header">
-		<!-- App Bar -->
-		<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+<div class="grid h-screen grid-rows-[auto_1fr_auto] bg-surface-200-700-token">
+	<!-- Header -->
+	<header>
+		<AppBar
+			gridColumns="grid-cols-3"
+			slotDefault="place-self-center"
+			slotTrail="place-content-end"
+			background="bg-surface-200-700-token"
+		>
 			<svelte:fragment slot="lead">
 				<div class="flex items-center justify-center">
-					<button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
+					<button class="md:hidden btn btn-sm mr-4" on:click={drawerOpen}>
 						<span>
 							<svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
 								<rect width="100" height="20" />
@@ -40,21 +41,42 @@
 					</button>
 				</div>
 			</svelte:fragment>
-
 			<img alt="The project logo" src={logo} />
-
 			<svelte:fragment slot="trail">
 				<LightSwitch />
 			</svelte:fragment>
 		</AppBar>
-	</svelte:fragment>
+	</header>
 
-	<svelte:fragment slot="sidebarLeft">
-		<Navigation />
-	</svelte:fragment>
-	<!-- Page Route Content -->
-	<slot />
-</AppShell>
+	<!-- Grid Columns -->
+	<div class="grid grid-cols-1 md:grid-cols-[auto_1fr]">
+		<!-- Left Sidebar. -->
+		<aside class="hidden md:block bg-surface-100-800-token">
+			<Navigation />
+		</aside>
+		<!-- Main Content -->
+		<main class="bg-surface-50-900-token">
+			<slot />
+		</main>
+	</div>
+
+	<!-- Footer -->
+	<footer class="footer p-6 bg-surface bg-surface-200-700-token">
+		<div class="container mx-auto text-center space-y-4">
+			<p class="text-lg font-semibold">© 2024 Your Company Name</p>
+			<p class="text-sm">All rights reserved.</p>
+			<div class="space-x-4">
+				<a href="/privacy-policy">Privacy Policy</a>
+				<a href="/terms-of-service">Terms of Service</a>
+			</div>
+		</div>
+	</footer>
+</div>
+
+<!--Mobile Sidebar: This hides when the screen grows larger than md because of "md:hidden"-->
+<Drawer>
+	<Navigation />
+</Drawer>
 
 <style>
 	/* Make the image responsive */
