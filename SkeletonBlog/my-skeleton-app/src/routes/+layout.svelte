@@ -38,9 +38,10 @@
 							</svg>
 						</span>
 					</button>
-					<img alt="The project logo" src={logo} />
 				</div>
 			</svelte:fragment>
+
+			<img alt="The project logo" src={logo} />
 
 			<svelte:fragment slot="trail">
 				<LightSwitch />
