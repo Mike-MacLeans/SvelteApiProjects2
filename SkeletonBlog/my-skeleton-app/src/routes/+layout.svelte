@@ -55,7 +55,7 @@
 			<Navigation />
 		</aside>
 		<!-- Main Content -->
-		<main class="bg-surface-50-900-token">
+		<main>
 			<slot />
 		</main>
 	</div>
