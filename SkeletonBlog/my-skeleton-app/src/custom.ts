@@ -6,7 +6,7 @@ export const custom: CustomThemeConfig = {
 		// =~= Theme Properties =~=
 		"--theme-font-family-base": `system-ui`,
 		"--theme-font-family-heading": `system-ui`,
-		"--theme-font-color-base": "var(--color-primary-900)",
+		"--theme-font-color-base": "0 0 0",
 		"--theme-font-color-dark": "var(--color-primary-50)",
 		"--theme-rounded-base": "9999px",
 		"--theme-rounded-container": "8px",
