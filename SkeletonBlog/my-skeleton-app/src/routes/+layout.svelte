@@ -19,9 +19,9 @@
 	}
 </script>
 
-<div class="grid h-screen grid-rows-[auto_1fr_auto] bg-surface-200-700-token">
+<div class="grid grid-rows-[auto_1fr_auto] bg-surface-200-700-token">
 	<!-- Header -->
-	<header>
+	<header class="sticky top-0 z-10 h-16">
 		<AppBar
 			gridColumns="grid-cols-3"
 			slotDefault="place-self-center"
@@ -51,7 +51,7 @@
 	<!-- Grid Columns -->
 	<div class="grid grid-cols-1 md:grid-cols-[auto_1fr]">
 		<!-- Left Sidebar. -->
-		<aside class="hidden md:block bg-surface-100-800-token">
+		<aside class="hidden md:block bg-surface-100-800-token sticky top-16 h-screen">
 			<Navigation />
 		</aside>
 		<!-- Main Content -->
