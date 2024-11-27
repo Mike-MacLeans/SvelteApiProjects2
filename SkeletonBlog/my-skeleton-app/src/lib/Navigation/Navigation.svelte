@@ -21,7 +21,7 @@
 
 		return {
 			delay: params.delay || 0,
-			duration: params.duration || 400,
+			duration: params.duration || 500,
 			easing: params.easing || cubicOut,
 			css: (t: number, u: number) =>
 				`transform-origin: top left; transform: ${existingTransform} scaleY(${t}); opacity: ${t};`
